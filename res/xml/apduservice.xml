@@ -1,0 +1,18 @@
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/servicedesc"
+    android:requireDeviceUnlock="false" >
+
+    <aid-group
+        android:category="other"
+        android:description="@string/aiddescription" >
+        <aid-filter android:name="F0010203040506" />
+        <aid-filter android:name="F0394148148100" />
+        <aid-filter android:name="A000000151000000" />
+        <aid-filter android:name="A000000003000000" />
+        <aid-filter android:name="A0000000031010" />
+        <aid-filter android:name="A0000000041010" />
+        <aid-filter android:name="A000000167413000ff"/> <!--  jcop id -->
+        <aid-filter android:name="315041592e5359532e4444463031" /><!--  PPSE -->
+    </aid-group>
+
+</host-apdu-service>
