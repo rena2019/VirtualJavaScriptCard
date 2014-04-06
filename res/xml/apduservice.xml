@@ -1,18 +1,30 @@
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:apduServiceBanner="@drawable/ic_launcher"
     android:description="@string/servicedesc"
-    android:requireDeviceUnlock="false" >
+    android:requireDeviceUnlock="true" >
 
+    <aid-group
+        android:category="payment"
+        android:description="@string/aiddescription" >
+        <aid-filter android:name="A0000000041010" /> <!-- Mastercard credit or debit -->
+        <aid-filter android:name="A0000000043060"/> <!--  Maestro (debit card) -->
+        <aid-filter android:name="315041592E5359532E4444463031" /> <!-- PSE -->
+        
+        <!-- "2PAY.SYS.DDF01" -->
+        <aid-filter android:name="325041592E5359532E4444463031" android:description="@string/PPSE"/>
+
+        <!-- VISA MSD AID -->
+        <aid-filter android:name="A0000000031010" android:description="@string/Visa"/>
+    </aid-group>
     <aid-group
         android:category="other"
         android:description="@string/aiddescription" >
-        <aid-filter android:name="F0010203040506" />
-        <aid-filter android:name="F0394148148100" />
-        <aid-filter android:name="A000000151000000" />
-        <aid-filter android:name="A000000003000000" />
-        <aid-filter android:name="A0000000031010" />
-        <aid-filter android:name="A0000000041010" />
-        <aid-filter android:name="A000000167413000ff"/> <!--  jcop id -->
-        <aid-filter android:name="315041592e5359532e4444463031" /><!--  PPSE -->
+        <aid-filter android:name="F0010203040506" /> <!-- Test AID 1 -->
+        <aid-filter android:name="F0394148148100" /> <!-- Test AID 2 -->
+        <aid-filter android:name="F04E66E75C02D8" /> <!-- xposed mod -->
+        <aid-filter android:name="A000000151000000" /> <!-- Gp 2.2 -->
+        <aid-filter android:name="A000000003000000" /> <!-- GP 2.1 -->
+        <aid-filter android:name="A000000167413000ff" /> <!-- jcop id -->
     </aid-group>
 
 </host-apdu-service>

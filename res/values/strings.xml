@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">VirtualJavaScriptCard</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="aiddescription">aiddescription</string>
     <string name="servicedesc">servicedesc</string>
-
+    <string name="PPSE">PPSE</string>
+    <string name="Visa">Visa</string>
 </resources>
