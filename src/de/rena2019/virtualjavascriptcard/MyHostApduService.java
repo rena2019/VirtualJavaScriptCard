@@ -44,7 +44,8 @@ public class MyHostApduService extends HostApduService {
 		try {
 			//call javascript function processApdu
 			Object ret = callFunction("processApdu", new Object[] { apdu });
-			bytes = ObjectToByteArray(ret);
+			if (ret != null)
+				bytes = ObjectToByteArray(ret);
 		} catch(Exception ex) {
 			Log.e(this.getClass().getName(), ex.toString());
 		}
